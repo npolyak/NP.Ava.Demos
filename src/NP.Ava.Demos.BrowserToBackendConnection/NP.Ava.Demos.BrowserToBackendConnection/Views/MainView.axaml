@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Width="600"
+			 Height="500"
+             x:Class="NP.Ava.Demos.BrowserToBackendConnection.Views.MainView">
+	<Grid RowDefinitions="*,Auto"
+		  Height="300"
+		  VerticalAlignment="Center">
+		<TextBlock x:Name="TheText" 
+				   Text="Hello World from Avalonia" 
+				   HorizontalAlignment="Center" 
+				   VerticalAlignment="Center"/>
+
+		<Button x:Name="GetStringFromBackendButton"
+				Content="Get String from Backend"
+				Grid.Row="1"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Bottom"/>
+	</Grid>
+</UserControl>
