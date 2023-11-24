@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Ava.Demos.BrowserToBacke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NP.Ava.Demos.BrowserToBackendConnection.Browser", "NP.Ava.Demos.BrowserToBackendConnection.Browser\NP.Ava.Demos.BrowserToBackendConnection.Browser.csproj", "{BDE2F809-0F2F-477F-B299-3A5852BF6B7D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend", "Backend\Backend.csproj", "{870DEB30-6215-4BB3-A33A-AD5DD0EF951C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIBackend", "WebAPIBackend\WebAPIBackend.csproj", "{EB74D182-F456-47DE-B529-2F581C1A8E2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIBackend", "WebAPIBackend\WebAPIBackend.csproj", "{EB74D182-F456-47DE-B529-2F581C1A8E2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{BDE2F809-0F2F-477F-B299-3A5852BF6B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDE2F809-0F2F-477F-B299-3A5852BF6B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDE2F809-0F2F-477F-B299-3A5852BF6B7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{870DEB30-6215-4BB3-A33A-AD5DD0EF951C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{870DEB30-6215-4BB3-A33A-AD5DD0EF951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{870DEB30-6215-4BB3-A33A-AD5DD0EF951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{870DEB30-6215-4BB3-A33A-AD5DD0EF951C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB74D182-F456-47DE-B529-2F581C1A8E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB74D182-F456-47DE-B529-2F581C1A8E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB74D182-F456-47DE-B529-2F581C1A8E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
