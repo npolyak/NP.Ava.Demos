@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="nuget.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NP.Ava.Visuals" Version="1.0.0" />
+   </ItemGroup>
+</Project>

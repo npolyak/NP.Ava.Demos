@@ -1,0 +1,47 @@
+<Window x:Name="TheWindow"
+		xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="NP.Demos.ItemsPresenterSample.MainWindow"
+		xmlns:local="clr-namespace:NP.Demos.ItemsPresenterSample"
+		Title="NP.Demos.ItemsPresenterSample"
+		Width="500"
+		Height="300">
+	<Window.Resources>
+		<local:TestViewModel x:Key="TheViewModel"/>
+
+		<DataTemplate x:Key="PersonDataTemplate">
+			<Grid RowDefinitions="Auto, Auto"
+				  Margin="10">
+				<TextBlock Text="{Binding Path=FirstName, StringFormat='FirstName: {0}'}"/>
+				<TextBlock Text="{Binding Path=LastName, StringFormat='LastName: {0}'}"
+						   Grid.Row="1"/>
+			</Grid>
+		</DataTemplate>
+
+		<DataTemplate x:Key="TestViewModelDataTemplate">
+			<Grid RowDefinitions="*, Auto, Auto">
+				<ItemsControl ItemsSource="{Binding Path=People}"
+							  ItemTemplate="{StaticResource PersonDataTemplate}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+				<TextBlock Text="{Binding Path=NumberOfPeople, StringFormat='Number of People: {0}'}"
+						   Grid.Row="1"
+						   HorizontalAlignment="Left"
+						   Margin="10"/>
+				<Button Content="Remove Last"
+						IsEnabled="{Binding Path=CanRemoveLast}"
+						Command="{Binding Path=RemoveLast}"
+						Grid.Row="2"
+						HorizontalAlignment="Right"
+						Margin="10"/>
+			</Grid>
+		</DataTemplate>
+	</Window.Resources>
+	<ContentPresenter Content="{StaticResource TheViewModel}"
+					  ContentTemplate="{StaticResource TestViewModelDataTemplate}"
+					  Margin="10"/>
+</Window>
