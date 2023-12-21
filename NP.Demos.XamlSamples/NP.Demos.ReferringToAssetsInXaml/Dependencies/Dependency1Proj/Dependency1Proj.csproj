@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\avalonia-32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\avalonia-32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Avalonia"
+						Version="11.0.6" />
+	  <PackageReference Include="Avalonia.Desktop"
+						Version="11.0.6" />
+  </ItemGroup>
+
+</Project>
