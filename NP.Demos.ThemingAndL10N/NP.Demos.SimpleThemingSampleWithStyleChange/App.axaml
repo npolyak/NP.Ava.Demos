@@ -11,10 +11,10 @@
                         StyleResourceName="ColorLoaderStyles"> <!-- to refer to the style by StyleReference-->
           <np:ThemeInfo Id="Dark"
                         ResourceUrl="/ColorThemes/DarkResources.axaml"
-                        StyleUrl="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/> <!-- refers to dark styles -->
+						StyleUrl="/ColorThemes/DarkStyles.axaml"/> <!-- refers to dark styles -->
           <np:ThemeInfo Id="Light"
                         ResourceUrl="/ColorThemes/LightResources.axaml"
-                        StyleUrl="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/> <!-- refers to light styles -->
+						StyleUrl="/ColorThemes/LightStyles.axaml"/> <!-- refers to light styles -->
         </np:ThemeLoader>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
@@ -25,6 +25,6 @@
     <np:StyleReference TheStyle="{StaticResource ColorLoaderStyles}"/>
     
     <!-- Default Avalonia Style -->
-    <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+    <SimpleTheme/>
   </Application.Styles>
 </Application>

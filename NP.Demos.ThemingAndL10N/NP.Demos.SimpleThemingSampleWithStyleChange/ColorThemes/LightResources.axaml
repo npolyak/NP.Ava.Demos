@@ -2,8 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <!-- Defing Background and Foreground brushes for light theme -->
-  <SolidColorBrush x:Key="BackgroundBrush"
+  <SolidColorBrush x:Key="WindowBackgroundBrush"
                    Color="White"/>
+	<SolidColorBrush x:Key="ButtonBackgroundBrush"
+					 Color="#FFDDDDDD"/>
   <SolidColorBrush x:Key="ForegroundBrush"
                  Color="Black"/>
 </ResourceDictionary>
