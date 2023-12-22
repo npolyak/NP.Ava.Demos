@@ -1,0 +1,213 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:local="clr-namespace:NP.Demos.Primitives"
+        x:Class="NP.Demos.Primitives.MainWindow"
+        Width="800"
+        Height="320"
+        Title="Primitives">
+  <Window.Styles>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontWeight"
+              Value="Bold"/>
+      <Setter Property="Margin"
+              Value="0,0,0,3"/>
+    </Style>
+    <Style Selector="Grid.HorSeparator">
+      <Setter Property="Height"
+              Value="1"/>
+      <Setter Property="Grid.ColumnSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+    <Style Selector="Grid.VertSeparator">
+      <Setter Property="Width"
+              Value="1"/>
+      <Setter Property="Grid.RowSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+  </Window.Styles>
+  <TabControl>
+    <TabItem Header="Border">
+      <Border Margin="20"
+              BorderThickness="10"
+              BorderBrush="Red"
+              Background="Blue"
+              CornerRadius="0, 10, 40, 120">
+        <TextBlock Foreground="White"
+                   FontSize="20"
+                   Text="Border Example!"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+      </Border>
+    </TabItem>
+    <TabItem Header="Viewbox">
+        <Grid Margin="20">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <StackPanel VerticalAlignment="Top"
+                      HorizontalAlignment="Center">
+            <TextBlock Text="Choose Stretch Type"/>
+            <ComboBox x:Name="StretchChooser" 
+                      ItemsSource="{Binding Source={x:Type Stretch}, Converter={x:Static local:EnumTypeToCollectionConverter.Instance}}"
+                      Width="100"
+                      Height="30"
+                      Margin="10"/>
+          </StackPanel>
+          <Viewbox x:Name="TheViewBox" 
+                   Stretch="{Binding Path=SelectedItem, ElementName=StretchChooser, Mode=TwoWay}"
+                   Grid.Column="1">
+            <Grid  Width="640"
+                   Height="238"
+                   Background="LightBlue">
+              <TextBlock FontSize="20"
+                         Text="Enter Text: "
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Margin="20"/>
+              <TextBox Grid.Column="1"
+                       Width="300"
+                       FontSize="20"
+                       Margin="20"
+                       Text="Hello World!!!"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+            </Grid>
+          </Viewbox>
+        </Grid>
+    </TabItem>
+    <TabItem Header="Image">
+      <Grid ColumnDefinitions="Auto, *">
+        <StackPanel VerticalAlignment="Top"
+                    HorizontalAlignment="Center">
+          <TextBlock Text="Choose Stretch Type"/>
+          <ComboBox x:Name="ImageStretchChooser"
+                    ItemsSource="{Binding Source={x:Type Stretch}, Converter={x:Static local:EnumTypeToCollectionConverter.Instance}}"
+                    Width="100"
+                    Height="30"
+                    Margin="10"/>
+        </StackPanel>
+        <Grid Grid.Column="1">
+          <Image x:Name="TheImage"
+                 Stretch="{Binding #ImageStretchChooser.SelectedItem, Mode=TwoWay}"
+                 Source="/Images/LinuxIcon.jpg"/>
+        </Grid>
+      </Grid>
+    </TabItem>
+    <TabItem Header="Shapes">
+      <Grid ColumnDefinitions="200, *"
+            Margin="10">
+        <Grid.Resources>
+          <ResourceDictionary>
+            <local:BoolToBrushConverter x:Key="FillConverter"
+                                        TrueBrush="Red"/>
+          </ResourceDictionary>
+        </Grid.Resources>
+        <StackPanel VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,20,0">
+          <TextBlock Text="Choose Stretch Type"/>
+          <ComboBox x:Name="ShapeStretchChooser"
+                    ItemsSource="{Binding Source={x:Type Stretch}, Converter={x:Static local:EnumTypeToCollectionConverter.Instance}}"
+                    SelectedIndex="2"
+                    Width="100"
+                    Height="30"
+                    Margin="10"/>
+
+          <TextBlock Text="Choose Stroke Thickness"
+                     Margin="0,20,0,0"/>
+          <Slider x:Name="ThicknessSlider"
+                  Value="1"
+                  Minimum="0"
+                  Maximum="10"
+                  TickPlacement="BottomRight"
+                  IsSnapToTickEnabled="True"
+                  Ticks="0,1,2,3,4,5,7,6,8,9,10"
+                  HorizontalAlignment="Stretch"/>
+
+          <TextBlock Text="Choose if Shapes have a Fill"
+                     Margin="0,20,0,0"/>
+          <CheckBox x:Name="HasFillCheckBox"
+                    Content="Has Fill"/>
+        </StackPanel>
+        <Grid ColumnDefinitions="*, *, *, *"
+              Margin="20,10,10,10"
+              Grid.Column="1"
+              ShowGridLines="True">
+          <Grid.Styles>
+            <Style Selector="TextBlock.ShapeHeader">
+              <Setter Property="FontWeight"
+                      Value="Bold"/>
+              <Setter Property="FontSize"
+                      Value="16"/>
+              <Setter Property="Margin"
+                      Value="5"/>
+            </Style>
+          </Grid.Styles>
+
+            <Grid RowDefinitions="Auto, *">
+              <TextBlock Text="Line:"
+                         Classes="ShapeHeader"/>
+              <Line StartPoint="0,0"
+                    EndPoint="50, 50"
+                    Grid.Row="1"
+                    Stretch="{Binding #ShapeStretchChooser.SelectedItem}"
+                    Stroke="Black"
+                    Margin="20"
+                    StrokeThickness="{Binding #ThicknessSlider.Value}"
+                    Fill="{Binding #HasFillCheckBox.IsChecked, Converter={StaticResource FillConverter}}"/>
+            </Grid>
+
+
+          <Grid RowDefinitions="Auto, *"
+                Grid.Column="1">
+            <TextBlock Text="Rectangle:"
+                       Classes="ShapeHeader"/>
+            <Rectangle HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                       Margin="20"
+                        Grid.Row="1"
+                       Stretch="{Binding #ShapeStretchChooser.SelectedItem}"
+                       Stroke="Black"
+                       StrokeThickness="{Binding #ThicknessSlider.Value}"
+                       Fill="{Binding #HasFillCheckBox.IsChecked, Converter={StaticResource FillConverter}}"/>
+          </Grid>
+
+          <Grid RowDefinitions="Auto, *"
+                Grid.Column="2">
+            <TextBlock Text="Ellipse:"
+                       Classes="ShapeHeader"/>
+            <Ellipse HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                      Grid.Row="1"
+                       Margin="20"
+                       Stretch="{Binding #ShapeStretchChooser.SelectedItem}"
+                       Stroke="Black"
+                       StrokeThickness="{Binding #ThicknessSlider.Value}"
+                       Fill="{Binding #HasFillCheckBox.IsChecked, Converter={StaticResource FillConverter}}"/>
+          </Grid>
+
+          <Grid RowDefinitions="Auto, *"
+                Grid.Column="3">
+            <TextBlock Text="Path:"
+                       Classes="ShapeHeader"/>
+            <Path Data="M11.92,19.92L4,12L11.92,4.08L13.33,5.5L7.83,11H22V13H7.83L13.34,18.5L11.92,19.92M4,12V2H2V22H4V12Z"
+                  Stretch="{Binding #ShapeStretchChooser.SelectedItem}"
+                  Stroke="Black"
+                  Grid.Row="1"
+                  Margin="20"
+                  StrokeThickness="{Binding #ThicknessSlider.Value}"
+                  Fill="{Binding #HasFillCheckBox.IsChecked, Converter={StaticResource FillConverter}}"/>
+          </Grid>
+        </Grid>
+      </Grid>
+    </TabItem>
+  </TabControl>
+</Window>

@@ -1,0 +1,345 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NP.Demos.BuiltInControls.MainWindow"
+        Width="800"
+        Height="320"
+        Title="Built-In Controls">
+  <Window.Styles>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontWeight"
+              Value="Bold"/>
+      <Setter Property="Margin"
+              Value="0,0,0,3"/>
+    </Style>
+    <Style Selector="Grid.HorSeparator">
+      <Setter Property="Height"
+              Value="1"/>
+      <Setter Property="Grid.ColumnSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+    <Style Selector="Grid.VertSeparator">
+      <Setter Property="Width"
+              Value="1"/>
+      <Setter Property="Grid.RowSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+  </Window.Styles>
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid Margin="5">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Text Block:"
+                 Classes="h1"/>
+      <TextBlock Text="Hello World!"
+                 Grid.Row="1"
+                 VerticalAlignment="Top"/>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Column="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Type in this TextBox:"
+                 Classes="h1"/>
+      <Grid Grid.Row="1">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="TheTextBox"
+                 Width="150"
+                 Height="27"
+                 HorizontalAlignment="Left"
+                 Grid.Row="0"/>
+        <TextBlock Text="{Binding Path=Text, ElementName=TheTextBox}"
+                   Grid.Row="1"
+                   Height="17"/>
+      </Grid>
+    </Grid>
+    <Grid Margin="5"
+      Grid.Column="4">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Button:"
+                 Classes="h1"/>
+      <Button Content="Button"
+              Padding="10,5"
+              Grid.Row="1"/>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Column="6">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="ListBox:"
+                 Classes="h1"/>
+      <ListBox x:Name="TheListBox" 
+               VerticalAlignment="Top"
+               Grid.Row="1">
+        <ListBoxItem Content="Item 1"/>
+        <ListBoxItem Content="Item 2"/>
+        <ListBoxItem Content="Item 3"/>
+        <ListBoxItem Content="Item 4"/>
+      </ListBox>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Column="8">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="ComboBox:"
+                 Classes="h1"/>
+      <ComboBox VerticalAlignment="Top"
+                Grid.Row="1"
+                SelectedIndex="{Binding Path=SelectedIndex, ElementName=TheListBox, Mode=TwoWay}">
+        <ComboBoxItem Content="Item 1"/>
+        <ComboBoxItem Content="Item 2"/>
+        <ComboBoxItem Content="Item 3"/>
+        <ComboBoxItem Content="Item 4"/>
+      </ComboBox>
+    </Grid>
+
+    <Grid Margin="5"
+          Grid.Row="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="ToggleButton:"
+                 Classes="h1"/>
+      <ToggleButton x:Name="TheToggleButton" 
+                    Content="Toggle Button"
+                    VerticalAlignment="Top"
+                    Grid.Row="1"/>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Row="2"
+          Grid.Column="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Check Box:"
+                 Classes="h1"/>
+      <CheckBox Content="Check Box"
+                VerticalAlignment="Top"
+                Grid.Row="1"
+                IsChecked="{Binding Path=IsChecked, ElementName=TheToggleButton}"/>
+    </Grid>
+    <Grid Margin="5"
+      Grid.Row="2"
+      Grid.Column="4">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Three State Check Box:"
+                 Classes="h1"/>
+      <CheckBox Content="Three State Check Box"
+                VerticalAlignment="Top"
+                Grid.Row="1"
+                IsThreeState="True"/>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Row="2"
+          Grid.Column="6">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Contex Menu:"
+                 Classes="h1"/>
+      <Grid Grid.Row="1"
+            Background="Transparent">
+        <Grid.ContextMenu>
+          <ContextMenu Grid.Row="1">
+            <MenuItem Header="Item1">
+              <MenuItem Header="SubItem1"/>
+              <MenuItem Header="SubItem2"/>
+            </MenuItem>
+            <MenuItem Header="Item2"/>
+            <MenuItem Header="Item3"/>
+            <MenuItem Header="Item4"/>
+          </ContextMenu>
+        </Grid.ContextMenu>
+        <TextBlock Text="Right Click To Open Context Menu"
+                   VerticalAlignment="Center"/>
+      </Grid>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Row="2"
+          Grid.Column="8">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Menu:"
+                 Classes="h1"/>
+      <Menu Grid.Row="1">
+        <MenuItem Header="FILE">
+          <MenuItem Header="New"/>
+          <MenuItem Header="Open"/>
+          <MenuItem Header="Save"/>
+        </MenuItem>
+        <MenuItem Header="EDIT">
+          <MenuItem Header="Copy"/>
+          <MenuItem Header="Paste"/>
+        </MenuItem>
+      </Menu>
+    </Grid>
+    <Grid Margin="5"
+          Grid.Row="4"
+          Grid.Column="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Popup:"
+                 Classes="h1"/>
+      <Grid Grid.Row="1">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ToggleButton x:Name="OpenClosePopupButton"
+                      Content="Open/Close Popup"/>
+
+        <Popup x:Name="ThePopup"
+               Grid.Row="1" 
+               IsOpen="{Binding Path=IsChecked, ElementName=OpenClosePopupButton, Mode=TwoWay}"
+               IsLightDismissEnabled="True"
+               PlacementMode="Bottom"
+               PlacementTarget="{Binding ElementName=OpenClosePopupButton}">
+          <Grid x:Name="PopupsContent"
+                Background="Red"
+                Width="150"
+                Height="70">
+            <TextBlock Text="Popup's Content"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+          </Grid>
+        </Popup>
+      </Grid>
+    </Grid>
+
+    <Grid Margin="5"
+          Grid.Row="4"
+          Grid.Column="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Window:"
+                 Classes="h1"/>
+      <Button x:Name="OpenWindowButton"
+              Grid.Row="1"
+              Content="Open Window"/>
+    </Grid>
+
+
+    <Grid Margin="5"
+          Grid.Row="4"
+          Grid.Column="4">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="Modal (Dialog) Window:"
+                 Classes="h1"/>
+      <Button x:Name="OpenModalWindowButton"
+              Grid.Row="1"
+              Content="Open Modal (Dialog) Window"/>
+    </Grid>
+
+    <Grid Margin="5"
+        Grid.Row="4"
+        Grid.Column="6">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="ToolTip:"
+                 Classes="h1"/>
+      <Grid Grid.Row="1"
+            Height="40"
+            Background="Aqua"
+            ToolTip.Tip="This is the ToolTip">
+        <TextBlock Text="Mouse over for ToolTip"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+      </Grid>
+    </Grid>
+
+
+    <Grid Margin="5"
+        Grid.Row="4"
+        Grid.Column="8">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="TabControl:"
+                 Classes="h1"/>
+      <TabControl Grid.Row="1">
+        <TabItem Header="Tab 1">
+          <TextBlock Text="Hello World!"/>
+        </TabItem>
+        <TabItem Header="Tab2">
+          <TextBlock Text="Hi World!"/>
+        </TabItem>
+      </TabControl>
+    </Grid>
+
+    <Grid Classes="HorSeparator"
+          Grid.Row="1"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="1"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="3"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="5"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="7"/>
+
+    <Grid Classes="HorSeparator"
+      Grid.Row="3"/>
+  </Grid>
+</Window>

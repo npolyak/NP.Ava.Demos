@@ -1,0 +1,235 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NP.Demos.Transforms.MainWindow"
+        Width="770"
+        Height="270"
+        Title="Built-In Controls">
+  <Window.Styles>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontWeight"
+              Value="Bold"/>
+      <Setter Property="Margin"
+              Value="0,0,0,3"/>
+    </Style>
+    <Style Selector="Grid.HorSeparator">
+      <Setter Property="Height"
+              Value="1"/>
+      <Setter Property="Grid.ColumnSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+    <Style Selector="Grid.VertSeparator">
+      <Setter Property="Width"
+              Value="1"/>
+      <Setter Property="Grid.RowSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+  </Window.Styles>
+  <TabControl>
+    <TabItem Header="Render vs Layout Transform">
+
+      <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="20"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="200">
+          <TextBlock Text="{Binding #AngleSlider.Value, StringFormat='{}RotationAngle = {0:0}&#186;'}"/>
+          <Slider x:Name="AngleSlider"
+                  Minimum="0"
+                  Maximum="360"
+                  Ticks="0,30,60,90,120,150,180, 210,240,270,300,330,360"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+        </StackPanel>
+
+        <Grid Margin="5"
+              Grid.Column="2">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock Text="Render Rotate Transform Sample:"
+                     Classes="h1"/>
+
+          <Grid Width="200"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Background="LightBlue">
+            <Button Width="100"
+                    Height="25"
+                    RenderTransformOrigin="50%, 50%"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+              <Button.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="{Binding Path=Value, ElementName=AngleSlider}"/>
+                </TransformGroup>
+              </Button.RenderTransform>
+            </Button>
+          </Grid>
+        </Grid>
+
+
+        <Grid Margin="5"
+              Grid.Column="4">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <TextBlock Text="Layout Rotate Transform Sample:"
+                     Classes="h1"/>
+
+          <Grid Width="200"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Background="LightBlue">
+            <LayoutTransformControl HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+              <Button Width="100"
+                      Height="25"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"/>
+              <LayoutTransformControl.LayoutTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="{Binding Path=Value, ElementName=AngleSlider}"/>
+                </TransformGroup>
+              </LayoutTransformControl.LayoutTransform>
+            </LayoutTransformControl>
+          </Grid>
+        </Grid>
+
+        <Grid Classes="VertSeparator"
+              Grid.Column="1"/>
+      </Grid>
+    </TabItem>
+    <TabItem Header="Translate Transform">
+      <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="200">
+          <TextBlock Text="{Binding Path=Value, ElementName=XSlider, StringFormat='{}XShift = {0:0}'}"/>
+          <Slider x:Name="XSlider"
+                  Minimum="-50"
+                  Maximum="50"
+                  Value="0"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+
+          <TextBlock Text="{Binding Path=Value, ElementName=YSlider, StringFormat='{}YShift = {0:0}'}"/>
+          <Slider x:Name="YSlider"
+                  Value="0"
+                  Minimum="-50"
+                  Maximum="50"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+        </StackPanel>
+
+        <Button Width="100"
+                Height="25"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+          <Button.RenderTransform>
+            <TranslateTransform X="{Binding #XSlider.Value}"
+                                Y="{Binding #YSlider.Value}"/>
+          </Button.RenderTransform>
+        </Button>
+        <Grid Classes="VertSeparator"
+              Grid.Column="1"/>
+      </Grid>
+    </TabItem>
+
+    <TabItem Header="Scale Transform">
+      <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="200">
+          <TextBlock Text="{Binding Path=Value, ElementName=ScaleXSlider, StringFormat='{}ScaleX = {0:0.0}'}"/>
+          <Slider x:Name="ScaleXSlider"
+                  Minimum="-2"
+                  Maximum="2"
+                  Value="1"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+
+          <TextBlock Text="{Binding Path=Value, ElementName=ScaleYSlider, StringFormat='{}ScaleY = {0:0.0}'}"/>
+          <Slider x:Name="ScaleYSlider"
+                  Value="1"
+                  Minimum="-2"
+                  Maximum="2"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+        </StackPanel>
+
+        <Button Width="100"
+                Height="25"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+          <Button.RenderTransform>
+            <ScaleTransform ScaleX="{Binding #ScaleXSlider.Value}"
+                            ScaleY="{Binding #ScaleYSlider.Value}"/>
+          </Button.RenderTransform>
+        </Button>
+        <Grid Classes="VertSeparator"
+              Grid.Column="1"/>
+      </Grid>
+    </TabItem>
+    <TabItem Header="Skew Transform">
+      <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="200">
+          <TextBlock Text="{Binding Path=Value, ElementName=SkewXSlider, StringFormat='{}AngleX = {0:0}&#186;'}"/>
+          <Slider x:Name="SkewXSlider"
+                  Minimum="-90"
+                  Maximum="90"
+                  Value="0"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+
+          <TextBlock Text="{Binding Path=Value, ElementName=SkewYSlider, StringFormat='{}AngleY = {0:0}&#186;'}"/>
+          <Slider x:Name="SkewYSlider"
+                  Minimum="-90"
+                  Maximum="90"
+                  Value="0"
+                  IsSnapToTickEnabled="False"
+                  TickPlacement="BottomRight"/>
+        </StackPanel>
+
+        <Button Width="100"
+                Height="25"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+          <Button.RenderTransform>
+            <SkewTransform  AngleX="{Binding #SkewXSlider.Value}"
+                            AngleY="{Binding #SkewYSlider.Value}"/>
+          </Button.RenderTransform>
+        </Button>
+        <Grid Classes="VertSeparator"
+              Grid.Column="1"/>
+      </Grid>
+    </TabItem>
+  </TabControl>
+</Window>

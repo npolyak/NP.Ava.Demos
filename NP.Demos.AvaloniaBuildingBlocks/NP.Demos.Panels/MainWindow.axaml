@@ -1,0 +1,263 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="650"
+        Height="450"
+        x:Class="NP.Demos.Panels.MainWindow"
+        Title="NP.Demos.Panels">
+  <TabControl>
+    <TabControl.Styles>
+      <Style Selector="TextBlock.PanelHeader">
+        <Setter Property="FontSize"
+                Value="16"/>
+        <Setter Property="FontWeight"
+                Value="Bold"/>
+        <Setter Property="Margin"
+                Value="5,5,5,10"/>
+      </Style>
+    </TabControl.Styles>
+    <TabItem Header="StackPanel">
+      <Grid ColumnDefinitions="*, *"
+            Margin="20">
+        <Grid RowDefinitions="Auto, *">
+          <TextBlock Text="Vertical StackPanel:"
+                     Classes="PanelHeader"/>
+          <StackPanel Orientation="Vertical"
+                      Grid.Row="1"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left">
+            <Button Content="1"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="2"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="3"
+                    Width="100"
+                    Height="100"/>
+          </StackPanel>
+        </Grid>
+
+        <Grid RowDefinitions="Auto, *"
+              Grid.Column="1">
+          <TextBlock Text="Horizontal StackPanel:"
+                     Classes="PanelHeader"/>
+          <StackPanel Orientation="Horizontal"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      Grid.Row="1">
+            <Button Content="1"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="2"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="3"
+                    Width="100"
+                    Height="100"/>
+          </StackPanel>
+        </Grid>
+      </Grid>
+    </TabItem>
+    <TabItem Header="WrapPanel">
+      <Grid ColumnDefinitions="*, *"
+            Margin="20">
+        <Grid RowDefinitions="Auto, *">
+          <TextBlock Text="Vertical WrapPanel:"
+                     Classes="PanelHeader"/>
+          <WrapPanel Orientation="Vertical"
+                      Grid.Row="1"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left">
+            <Button Content="1"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="2"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="3"
+                    Width="100"
+                    Height="100"/>
+          </WrapPanel>
+        </Grid>
+
+        <Grid RowDefinitions="Auto, *"
+              Grid.Column="1">
+          <TextBlock Text="Horizontal WrapPanel:"
+                     Classes="PanelHeader"/>
+          <WrapPanel Orientation="Horizontal"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      Grid.Row="1">
+            <Button Content="1"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="2"
+                    Width="100"
+                    Height="100"/>
+            <Button Content="3"
+                    Width="100"
+                    Height="100"/>
+          </WrapPanel>
+        </Grid>
+      </Grid>
+    </TabItem>
+    <TabItem Header="Grid">
+      <Grid RowDefinitions="80, Auto, *, 2*"
+            ColumnDefinitions="80, Auto, *, 2*"
+            ShowGridLines="True"
+            Margin="20"
+            Background="White">
+        <Button Content="Row0, Col0"
+                Width="100"
+                Height="100"/>
+        <Button Content="Row0, Col1"
+                Grid.Column="1"
+                Width="100"
+                Height="100"/>
+        <Button Content="Row0, Col2"
+                Grid.Column="2"
+                Width="100"
+                Height="100"/>
+        <Button Content="Row0, Col3"
+                Grid.Column="3"
+                Width="100"
+                Height="100"/>
+
+        <Button Content="Row1, Col0"
+                Width="100"
+                Height="100"
+                Grid.Row="1"/>
+        <Button Content="Row1, Col1"
+                Grid.Column="1"
+                Width="100"
+                Height="100"
+                Grid.Row="1"/>
+        <Button Content="Row1, Col2"
+                Grid.Column="2"
+                Width="100"
+                Height="100"
+                Grid.Row="1"/>
+        <Button Content="Row1, Col3"
+                Grid.Column="3"
+                Width="100"
+                Height="100"
+                Grid.Row="1"/>
+
+
+        <Button Content="Row2, Col0"
+                Width="100"
+                Height="100"
+                Grid.Row="2"/>
+        <Button Content="Row2, Col1"
+                Grid.Column="1"
+                Width="100"
+                Height="100"
+                Grid.Row="2"/>
+        <Button Content="Row2, Col2"
+                Grid.Column="2"
+                Width="100"
+                Height="100"
+                Grid.Row="2"/>
+        <Button Content="Row2, Col3"
+                Grid.Column="3"
+                Width="100"
+                Height="100"
+                Grid.Row="2"/>
+
+
+        <Button Content="Row3, Col0"
+                Width="100"
+                Height="100"
+                Grid.Row="3"/>
+        <Button Content="Row3, Col1"
+                Grid.Column="1"
+                Width="100"
+                Height="100"
+                Grid.Row="3"/>
+        <Button Content="Row3, Col2"
+                Grid.Column="2"
+                Width="100"
+                Height="100"
+                Grid.Row="3"/>
+        <Button Content="Row3, Col3"
+                Grid.Column="3"
+                Width="100"
+                Height="100"
+                Grid.Row="3"/>
+      </Grid>
+    </TabItem>
+    <TabItem Header="DockPanel">
+      <DockPanel Margin="20">
+        <Button Content="1"
+                DockPanel.Dock="Left"
+                Width="30"/>
+        <Button DockPanel.Dock="Top"
+                Content="2"
+                Height="30"/>
+        <Button DockPanel.Dock="Right"
+                Content="3"
+                Width="30"/>
+        <Button DockPanel.Dock="Bottom"
+                Content="4"
+                Height="30"/>
+        <Button DockPanel.Dock="Left"
+                Content="5"
+                Width="30"/>
+        <Button DockPanel.Dock="Top"
+                Content="6"
+                Height="30"/>
+        <Button DockPanel.Dock="Right"
+                Content="7"
+                Width="30"/>
+        <Button DockPanel.Dock="Bottom"
+                Content="8"
+                Height="30"/>
+        <Button Content="The Rest"/>
+      </DockPanel>
+    </TabItem>
+    <TabItem Header="Canvas">
+      <Canvas Background="LightBlue">
+        <Button Content="1"
+                Width="100"
+                Height="100"
+                Canvas.Left="300"
+                Canvas.Top="200"/>
+      </Canvas>
+    </TabItem>
+    <TabItem Header="RelativePanel">
+      <RelativePanel Margin="20"
+                     Background="LightBlue">
+        <Button x:Name="Button1"
+                Height="50"
+                Content="Button1 - TopLeftCorner by default"/>
+        <Button x:Name="Button2"
+                Height="50"
+                RelativePanel.AlignTopWithPanel="True"
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                Content="Button2 - Mid Top"/>
+
+        <Button x:Name="Button3"
+                Height="50"
+                RelativePanel.AlignBottomWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                Content="Button3 - Bottom Right"/>
+
+
+        <Button x:Name="Button4"
+                Height="50"
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Content="Button4 - Center"/>
+
+
+        <Button x:Name="Button5"
+                Height="50"
+                RelativePanel.RightOf="Button4"
+                RelativePanel.Below="Button4"
+                Content="Button5 - Bottom right from Button4"/>
+      </RelativePanel>
+    </TabItem>
+  </TabControl>
+</Window>

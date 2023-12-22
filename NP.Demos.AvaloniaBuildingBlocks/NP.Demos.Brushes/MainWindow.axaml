@@ -1,0 +1,183 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NP.Demos.Brushes.MainWindow"
+        Width="750"
+        Height="150"
+        Title="Built-In Controls">
+  <Window.Styles>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontWeight"
+              Value="Bold"/>
+      <Setter Property="Margin"
+              Value="0,0,0,3"/>
+    </Style>
+    <Style Selector="Grid.HorSeparator">
+      <Setter Property="Height"
+              Value="1"/>
+      <Setter Property="Grid.ColumnSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+    <Style Selector="Grid.VertSeparator">
+      <Setter Property="Width"
+              Value="1"/>
+      <Setter Property="Grid.RowSpan"
+              Value="50"/>
+      <Setter Property="Background"
+              Value="Black"/>
+    </Style>
+  </Window.Styles>
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid Margin="5">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="SolidColorBrush (Red):"
+                 Classes="h1"/>
+      <Button Background="Red"
+              Grid.Row="1"
+              Content="Red"
+              Width="100"
+              Height="100"/>
+    </Grid>
+
+    <Grid Margin="5"
+          Grid.Column="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="SolidColorBrush (#FF43A047):"
+                 Classes="h1"/>
+      <Button Background="#FF43A047"
+              Grid.Row="1"
+              Content="#FF43A047"
+              Width="100"
+              Height="100"/>
+    </Grid>
+
+    <Grid Margin="5"
+      Grid.Column="4">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="LinearGradientBrush :"
+                 Classes="h1"/>
+      <Button Grid.Row="1"
+              Foreground="White"
+              Content="LinearGradient"
+              Width="100"
+              Height="100">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0%,0%"
+                               EndPoint="100%,100%" >
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Offset="0" Color="Red"/>
+              <GradientStop Offset="0.25" Color="Blue"/>
+              <GradientStop Offset="0.5" Color="Brown"/>
+              <GradientStop Offset="0.75" Color="Green"/>
+              <GradientStop Offset="1" Color="Purple"/>
+            </LinearGradientBrush.GradientStops>
+          </LinearGradientBrush>
+        </Button.Background>
+      </Button>
+    </Grid>
+
+    <Grid Margin="5"
+          Grid.Column="6">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="RadialGradientBrush :"
+                 Classes="h1"/>
+      <Button Grid.Row="1"
+              Foreground="White"
+              Content="RadialGradient"
+              Width="100"
+              Height="100">
+        <Button.Background>
+          <RadialGradientBrush GradientOrigin="25%,25%"
+                               Center="50%, 50%"
+                               Radius="0.5" >
+            <RadialGradientBrush.GradientStops>
+              <GradientStop Offset="0" Color="Red"/>
+              <GradientStop Offset="0.25" Color="Blue"/>
+              <GradientStop Offset="0.5" Color="Brown"/>
+              <GradientStop Offset="0.75" Color="Green"/>
+              <GradientStop Offset="1" Color="Purple"/>
+            </RadialGradientBrush.GradientStops>
+          </RadialGradientBrush>
+        </Button.Background>
+      </Button>
+    </Grid>
+
+    <Grid Margin="5"
+      Grid.Column="8">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Text="ConicGradientBrush :"
+                 Classes="h1"/>
+      <Button Grid.Row="1"
+              Foreground="White"
+              Content="ConicGradient"
+              Width="100"
+              Height="100">
+        <Button.Background>
+          <ConicGradientBrush Center="30%, 30%"
+                              Angle="90">
+            <ConicGradientBrush.GradientStops>
+              <GradientStop Offset="0" Color="Red"/>
+              <GradientStop Offset="0.25" Color="Blue"/>
+              <GradientStop Offset="0.5" Color="Brown"/>
+              <GradientStop Offset="0.75" Color="Green"/>
+              <GradientStop Offset="1" Color="Purple"/>
+            </ConicGradientBrush.GradientStops>
+          </ConicGradientBrush>
+        </Button.Background>
+      </Button>
+    </Grid>
+
+
+    <Grid Classes="VertSeparator"
+          Grid.Column="1"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="3"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="5"/>
+    <Grid Classes="VertSeparator"
+          Grid.Column="7"/>
+  </Grid>
+</Window>
