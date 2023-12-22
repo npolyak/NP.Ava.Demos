@@ -1,7 +1,8 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:np="https://np.com/visuals"
-             x:Class="NP.Demos.SimpleThemingSample.App">
+             x:Class="NP.Demos.SimpleThemingSample.App"
+			 np:ThemeVariantBehavior.TheThemeVariant="{DynamicResource TheThemeVariant}">
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
@@ -19,7 +20,6 @@
 
   <!-- Default Avalonia Styles -->
   <Application.Styles>
-    <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
-    <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+	  <SimpleTheme/>
   </Application.Styles>
 </Application>
