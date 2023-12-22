@@ -6,8 +6,8 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Layout;
 using System;
 using System.Linq;
-using NP.Avalonia.Visuals.ThemingAndL10N;
-using NP.Avalonia.Visuals.Behaviors;
+using NP.Ava.Visuals.ThemingAndL10N;
+using NP.Ava.Visuals.Behaviors;
 
 namespace NP.Demos.ThemingAndLocalizationDemo
 {

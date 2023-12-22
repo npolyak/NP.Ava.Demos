@@ -45,7 +45,7 @@
           <ComboBox x:Name="LanguageChoosingCombo"
                      RenderTransform="{StaticResource TheScale}"
                     np:HandleEventBehavior.TheEvent="{x:Static InputElement.PointerPressedEvent}"
-                    Items="{Binding Source={x:Static local:LanguageHelper.Languages}}"
+                    ItemsSource="{Binding Source={x:Static local:LanguageHelper.Languages}}"
                     SelectedItem="{Binding Path=SelectedLanguage, 
                                            Mode=TwoWay, 
                                            RelativeSource={RelativeSource AncestorType=local:MainWindow}}"
@@ -54,7 +54,7 @@
           <ComboBox x:Name="ColorThemeChoosingCombo"
                     RenderTransform="{StaticResource TheScale}"
                     np:HandleEventBehavior.TheEvent="{x:Static InputElement.PointerPressedEvent}"
-                    Items="{Binding Source={x:Static local:ColorThemesHelper.ColorThemes}}"
+                    ItemsSource="{Binding Source={x:Static local:ColorThemesHelper.ColorThemes}}"
                     SelectedItem="{Binding Path=SelectedColorTheme, 
                                            Mode=TwoWay, 
                                            RelativeSource={RelativeSource AncestorType=local:MainWindow}}"
@@ -121,7 +121,7 @@
 
       <ContentControl x:Name="_elementI"
                       FontSize="20"
-                      HorizontalAlignment="Left"
+                      HorizontalAlignment="Stretch"
                       Foreground="{DynamicResource FirstDataTemplateForeground}"
                       RenderTransform="{StaticResource TheScale}"
                       Grid.Row="5"/>
