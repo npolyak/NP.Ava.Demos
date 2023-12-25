@@ -3,8 +3,7 @@
              x:Class="NP.Demos.ThemingAndLocalizationDemo.App"
              xmlns:np="https://np.com/visuals"
              xmlns:local="clr-namespace:NP.Demos.ThemingAndLocalizationDemo"
-			 np:ThemeVariantBehavior.TheThemeVariant="{DynamicResource TheThemeVariant}">
-
+			 np:ThemeVariantBehavior.ThemeReference="{DynamicResource ThemeReference}">
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>

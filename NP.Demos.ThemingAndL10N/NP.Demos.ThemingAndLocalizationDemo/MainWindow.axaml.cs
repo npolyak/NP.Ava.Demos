@@ -5,7 +5,6 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Layout;
 using System;
-using System.Linq;
 using NP.Ava.Visuals.ThemingAndL10N;
 using NP.Ava.Visuals.Behaviors;
 
@@ -29,6 +28,10 @@ namespace NP.Demos.ThemingAndLocalizationDemo
 
             _colorThemeLoader =
                 Application.Current.Resources.GetThemeLoader("ColorLoader");
+
+
+            SelectedLanguage = Enum.Parse<Language>(_languageThemeLoader.SelectedThemeId?.ToString());
+            SelectedColorTheme = Enum.Parse<ColorTheme>(_colorThemeLoader.SelectedThemeId?.ToString());
 
             this.GetObservable(SelectedLanguageProperty).Subscribe(OnSelectedLanguageChanged);
             this.GetObservable(SelectedColorThemeProperty).Subscribe(OnSelectedColorThemeChanged);
