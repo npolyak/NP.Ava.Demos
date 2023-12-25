@@ -8,7 +8,7 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <np:ThemeLoader Name="ColorLoader"
-                        SelectedThemeId="Light"
+                        SelectedThemeId="Dark"
                         StyleResourceName="ColorLoaderStyles">
           <np:ThemeInfo Id="Dark"
                         ResourceUrl="/ColorDictionaries/DarkResources.axaml"/>
