@@ -9,7 +9,7 @@
     <!-- Add Styles Here -->
 	<Style Selector="Button.MyButton">
 		<Setter Property="CornerRadius"
-				Value="5"/>
+				Value="3"/>
 	</Style>
 		   
 </Styles>
