@@ -1,8 +1,7 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:np="https://np.com/visuals"
-             x:Class="NP.Demos.SimpleThemingSample.App"
-			 np:ThemeVariantBehavior.TheThemeVariant="{DynamicResource TheThemeVariant}">
+             x:Class="NP.Demos.SimpleThemingSample.App">
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
