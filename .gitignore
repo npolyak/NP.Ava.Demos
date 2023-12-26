@@ -57,3 +57,13 @@
 /NP.Demos.AvaloniaBuildingBlocks/NP.Demos.SimpleAvaloniaProject/.vs
 /NP.Demos.AvaloniaBuildingBlocks/NP.Demos.SimpleAvaloniaProject/obj/Debug/net5.0
 /NP.Demos.AvaloniaBuildingBlocks/NP.Demos.SimpleAvaloniaProject/obj
+/HostingDemos/HostingLinuxControlDemo/.vs/HostingLinuxControlDemo
+/HostingDemos/HostingLinuxControlDemo/LinuxControl/bin/Debug/net6.0
+/HostingDemos/HostingLinuxControlDemo/LinuxControl/obj
+/HostingDemos/HostingLinuxControlDemo/.vs/ProjectEvaluation
+/HostingDemos/HostingWinFormsDemo/.vs/HostingWinFormsDemo
+/HostingDemos/HostingWinFormsDemo/MyWinFormsControl/bin/Debug/net6.0-windows
+/HostingDemos/HostingWinFormsDemo/MyWinFormsControl/obj
+/HostingDemos/HostingWpfControlDemo/.vs
+/HostingDemos/HostingWpfControlDemo/WpfControl/bin/Debug/net6.0-windows
+/HostingDemos/HostingWpfControlDemo/WpfControl/obj
