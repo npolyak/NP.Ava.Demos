@@ -67,3 +67,10 @@
 /HostingDemos/HostingWpfControlDemo/.vs
 /HostingDemos/HostingWpfControlDemo/WpfControl/bin/Debug/net6.0-windows
 /HostingDemos/HostingWpfControlDemo/WpfControl/obj
+/HostingDemos/HostingNativeDemo/LinuxControl/obj/Debug/net6.0
+/HostingDemos/HostingNativeDemo/LinuxControl/obj
+/HostingDemos/HostingNativeDemo/ViewModels/obj/Debug/net6.0
+/HostingDemos/HostingNativeDemo/ViewModels/obj
+/HostingDemos/HostingNativeDemo/WpfControl/obj/Debug/net6.0-windows
+/HostingDemos/HostingNativeDemo/WpfControl/obj
+/HostingDemos/HostingWinFormsDemo/.vs/ProjectEvaluation
