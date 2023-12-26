@@ -1,20 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
-    <WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
-    <OutputType>Exe</OutputType>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+		<WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
+		<OutputType>Exe</OutputType>
+		<EmccFlags>-sVERBOSE -sERROR_ON_UNDEFINED_SYMBOLS=0</EmccFlags>
+		<Configurations>Debug;Release;Release AOT</Configurations>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release AOT'">
+		<Optimize>true</Optimize>
+		<MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
+		<RunAOTCompilation>true</RunAOTCompilation>
+		<PublishTrimmed>true</PublishTrimmed>
+		<TrimMode>full</TrimMode>
+		<WasmBuildNative>true</WasmBuildNative>
+		<WasmNativeStrip>true</WasmNativeStrip>
+		<InvariantGlobalization>false</InvariantGlobalization>
+		<EmccCompileOptimizationFlag>-O2</EmccCompileOptimizationFlag>
+		<EmccLinkOptimizationFlag>-O2</EmccLinkOptimizationFlag>
+		<EmccInitialHeapSize>32MB</EmccInitialHeapSize>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <WasmExtraFilesToDeploy Include="AppBundle\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<WasmExtraFilesToDeploy Include="AppBundle\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia.Browser" Version="11.0.5" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Browser"
+						  Version="11.0.5" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\NP.Ava.Demos.BrowserToBackendConnection\NP.Ava.Demos.BrowserToBackendConnection.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NP.Ava.Demos.BrowserToBackendConnection\NP.Ava.Demos.BrowserToBackendConnection.csproj" />
+	</ItemGroup>
 </Project>

@@ -1,2 +1,2 @@
-# NP.Ava.Demos
-Ava >= 11.0 demos
+# NP.Avalonia.Demos
+Demos related to AvaloniaUI
