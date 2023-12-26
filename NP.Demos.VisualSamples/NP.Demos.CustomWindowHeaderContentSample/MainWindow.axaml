@@ -13,6 +13,7 @@
 	<np:CustomWindow.HeaderContentTemplate>
 		<DataTemplate>
 			<TextBox Text="{Binding Text, Mode=TwoWay}"
+					 ScrollViewer.VerticalScrollBarVisibility="Disabled"
 					 Width="120"
 					 Height="25"/>
 		</DataTemplate>

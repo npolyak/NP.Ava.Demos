@@ -16,6 +16,7 @@
 				  Margin="0,0,0,-3"
 				  DataContext="{Binding RelativeSource={RelativeSource AncestorType=np:CustomWindow}}">
 				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
@@ -30,6 +31,7 @@
 					</TextBlock.RenderTransform>
 				</TextBlock>
 				<StackPanel Orientation="Horizontal"
+							HorizontalAlignment="Center"
 							VerticalAlignment="Center"
 							Grid.Column="1">
 					<Image Source="/Assets/LinuxIcon.png"

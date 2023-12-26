@@ -16,10 +16,14 @@
 					 VerticalAlignment="Center"
 					 ShowGridLines="True">
 			<np:AutoGrid.RowsHeights>
-				<GridLength x:Key="1">100</GridLength>
+				<np:GridLenDictionary>
+					<GridLength x:Key="1">100</GridLength>
+				</np:GridLenDictionary>
 			</np:AutoGrid.RowsHeights>
 			<np:AutoGrid.ColumnsWidths>
-				<GridLength x:Key="0">*</GridLength>
+				<np:GridLenDictionary>
+					<GridLength x:Key="0">*</GridLength>
+				</np:GridLenDictionary>
 			</np:AutoGrid.ColumnsWidths>
 			<Border Width="50"
 					Height="50"
@@ -27,6 +31,7 @@
 					VerticalAlignment="Top"
 					Background="Yellow"/>
 			<Button Content="Button 2"
+					VerticalAlignment="Stretch"
 					np:AutoGrid.Row="1"
 					np:AutoGrid.Column="1"/>
 			<Button x:Name="Button3"

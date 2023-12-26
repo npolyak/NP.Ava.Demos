@@ -1,6 +1,6 @@
 using Avalonia;
 using Avalonia.Markup.Xaml;
-using NP.Avalonia.Visuals.Controls;
+using NP.Ava.Visuals.Controls;
 
 namespace NP.Demos.CustomWindowHeaderContentSample
 {
