@@ -4,6 +4,6 @@ namespace NP.Demos.BuiltInThemingSample
 {
     public static class CustomThemes
     {
-        public static ThemeVariant Pink { get; } = new ("Pink", ThemeVariant.Light);
+        public static ThemeVariant Pink { get; } = new ThemeVariant("Pink", ThemeVariant.Light);
     }
 }
