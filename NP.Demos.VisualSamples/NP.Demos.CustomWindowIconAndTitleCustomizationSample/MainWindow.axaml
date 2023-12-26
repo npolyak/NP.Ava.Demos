@@ -37,6 +37,9 @@
 			<!-- underlined -->
 			<Setter Property="TextDecorations"
 					Value="Underline"/>
+			
+			<Setter Property="Padding"
+					Value="0,5"/>
 		</Style>
 	</Window.Styles>
 </Window>
