@@ -116,3 +116,6 @@
 /NP.MultiPlaformWindowDemo/.vs/NP.MultiPlaformWindowDemo
 /NP.MultiPlaformWindowDemo/bin/Debug/net6.0
 /NP.MultiPlaformWindowDemo/obj
+/CustomBehaviors/NP.Demos.DoubleCallActionBehaviorSample/obj
+/ConsoleAppForLinuxSubsystemDebuggingDemo/ConsoleAppForLinuxSubsystemDebuggingDemo.csproj.user
+/EmbeddingProblemOnLinux/WinHostingApp/obj
