@@ -1,2 +1,2 @@
-# NP.Avalonia.Demos
+# NP.Ava.Demos
 Demos related to AvaloniaUI
