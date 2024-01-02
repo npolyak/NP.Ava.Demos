@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using NP.Avalonia.UniDockService;
+using NP.Ava.UniDockService;
 using System.Collections.ObjectModel;
 using System.Linq;
 

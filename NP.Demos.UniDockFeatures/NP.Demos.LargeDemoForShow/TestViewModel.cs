@@ -1,4 +1,4 @@
-﻿using NP.Avalonia.UniDockService;
+﻿using NP.Ava.UniDockService;
 using NP.Utilities;
 using System.Collections.ObjectModel;
 using System.Linq;

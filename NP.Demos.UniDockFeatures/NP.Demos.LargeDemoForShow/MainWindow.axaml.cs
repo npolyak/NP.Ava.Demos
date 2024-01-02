@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using NP.Avalonia.UniDock;
+using NP.Ava.UniDock;
 
 namespace NP.Demos.LargeDemoForShow
 {

@@ -113,7 +113,7 @@
                             VerticalAlignment="Top">
                   <TextBlock Text="Choose Symbol: "
                              VerticalAlignment="Center"/>
-                  <ComboBox Items="{Binding Stocks}"
+                  <ComboBox ItemsSource="{Binding Stocks}"
                             Width="70"
                             SelectedItem="{Binding Path=SelectedStock, Mode=TwoWay}">
                     <ComboBox.ItemTemplate>

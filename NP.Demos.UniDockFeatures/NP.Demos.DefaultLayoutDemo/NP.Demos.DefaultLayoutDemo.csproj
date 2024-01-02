@@ -14,6 +14,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NP.Avalonia.UniDock" Version="1.0.47" />
+    <PackageReference Include="NP.Ava.UniDock" Version="1.0.1" />
   </ItemGroup>
 </Project>

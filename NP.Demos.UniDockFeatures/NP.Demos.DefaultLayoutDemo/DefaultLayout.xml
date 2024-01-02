@@ -20,7 +20,7 @@
         <DockGroupParams
             CanFloat="false"
             CanClose="false"
-            GroupFullTypeName="NP.Avalonia.UniDock.RootDockGroup"
+            GroupFullTypeName="NP.Ava.UniDock.RootDockGroup"
             DockId="RootDockGroup_1"
             ChildrenDockIds="StackDockGroup_10"
             DefaultDockOrderInGroup="0"
@@ -35,7 +35,7 @@
         <DockGroupParams
             CanFloat="true"
             CanClose="true"
-            GroupFullTypeName="NP.Avalonia.UniDock.DockItem"
+            GroupFullTypeName="NP.Ava.UniDock.DockItem"
             DockId="DockItem_4"
             ParentDockId="TabbedDockGroup_8"
             DefaultDockOrderInGroup="0"
@@ -53,7 +53,7 @@
         <DockGroupParams
             CanFloat="true"
             CanClose="true"
-            GroupFullTypeName="NP.Avalonia.UniDock.DockItem"
+            GroupFullTypeName="NP.Ava.UniDock.DockItem"
             DockId="DockItem_5"
             ParentDockId="TabbedDockGroup_8"
             DefaultDockOrderInGroup="0"
@@ -71,7 +71,7 @@
         <DockGroupParams
             CanFloat="true"
             CanClose="true"
-            GroupFullTypeName="NP.Avalonia.UniDock.DockItem"
+            GroupFullTypeName="NP.Ava.UniDock.DockItem"
             DockId="DockItem_6"
             ParentDockId="StackDockGroup_10"
             DefaultDockOrderInGroup="0"
@@ -89,7 +89,7 @@
         <DockGroupParams
             CanFloat="true"
             CanClose="true"
-            GroupFullTypeName="NP.Avalonia.UniDock.TabbedDockGroup"
+            GroupFullTypeName="NP.Ava.UniDock.TabbedDockGroup"
             DockId="TabbedDockGroup_8"
             ParentDockId="StackDockGroup_10"
             ChildrenDockIds="DockItem_4 DockItem_5"
@@ -105,7 +105,7 @@
         <DockGroupParams
             CanFloat="true"
             CanClose="true"
-            GroupFullTypeName="NP.Avalonia.UniDock.StackDockGroup"
+            GroupFullTypeName="NP.Ava.UniDock.StackDockGroup"
             DockId="StackDockGroup_10"
             ParentDockId="RootDockGroup_1"
             ChildrenDockIds="DockItem_6 TabbedDockGroup_8"

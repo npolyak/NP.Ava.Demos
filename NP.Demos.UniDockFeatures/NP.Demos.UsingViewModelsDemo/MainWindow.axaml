@@ -12,7 +12,7 @@
 </Window.Resources>
 <Grid RowDefinitions="Auto, *, Auto"
       Margin="5">
-  <ListBox Items="{Binding Path=DockItemsViewModels, Source={StaticResource TheDockManager}}"
+  <ListBox ItemsSource="{Binding Path=DockItemsViewModels, Source={StaticResource TheDockManager}}"
             Height="70">
     <ListBox.ItemTemplate>
       <DataTemplate>
