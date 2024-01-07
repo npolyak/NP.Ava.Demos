@@ -1,0 +1,18 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="NP.Demos.ChangeForeground.App" 
+			 xmlns:np="https://np.com/visuals">
+  <Application.Resources>
+    <SolidColorBrush x:Key="MyForeground"
+                     Color="Red"/>
+  </Application.Resources>
+    <Application.Styles>
+      <SimpleTheme/>
+      <StyleInclude Source="avares://NP.Ava.Visuals/Themes/CustomWindowStyles.axaml"/>
+      <StyleInclude Source="avares://NP.Ava.UniDock/Themes/DockStyles.axaml"/>
+	    <Style Selector="np|DockTabItem.Dock[IsSelected=True]">
+		    <Setter Property="Foreground"
+				    Value="Red"/>
+	    </Style>
+    </Application.Styles>
+</Application>
