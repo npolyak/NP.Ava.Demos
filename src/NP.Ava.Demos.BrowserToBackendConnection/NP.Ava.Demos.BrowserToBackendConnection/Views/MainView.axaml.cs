@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -25,11 +26,18 @@ public partial class MainView : UserControl
     private async void 
         GetStringFromBackendButton_Click(object? sender, RoutedEventArgs e)
     {
-        using HttpResponseMessage response = 
-            await client.GetAsync("https://localhost:7168/api/HelloWorld/Hello");
+        try
+        {
+            using HttpResponseMessage response =
+                await client.GetAsync("https://localhost:7168/api/HelloWorld/Hello");
 
-        response.EnsureSuccessStatusCode();
+            response.EnsureSuccessStatusCode();
 
-        string responseBody = await response.Content.ReadAsStringAsync();
+            string responseBody = await response.Content.ReadAsStringAsync();
+        }
+        catch(Exception ex)
+        {
+
+        }
     }
 }

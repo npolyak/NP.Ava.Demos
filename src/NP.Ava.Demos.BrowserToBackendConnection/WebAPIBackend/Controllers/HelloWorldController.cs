@@ -11,13 +11,13 @@ namespace WebAPIBackend.Controllers
         [HttpGet("Hello")]
         public string ReturnHello()
         {
-            return "Hello World44123!!!!!!";
+            return "Hello !!!!!!";
         }
 
         [HttpGet("Hello1")]
         public string ReturnHello1()
         {
-            return "Hello World441234!!!!!!";
+            return "Hello World!!!!!!";
         }
     }
 }
