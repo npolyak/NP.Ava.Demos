@@ -55,7 +55,7 @@ var app = builder.Build();
 
 app.UseCors(PolicyName);
 
-//app.UseAuthorization();
+app.UseAuthorization();
 //app.Urls.Add("http://localhost:7168");
 app.MapControllers();
 //app.MapRazorPages();
