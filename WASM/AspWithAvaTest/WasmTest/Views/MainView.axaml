@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WasmTest.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 HorizontalAlignment="Left"
+			 VerticalAlignment="Top"
+             x:Class="WasmTest.Views.MainView">
+	<StackPanel>
+		<TextBlock Text="Hello from Avalonia!!!"
+				   HorizontalAlignment="Center"
+				   Margin="0,5"/>
+		<Button Content="Click Me"
+				HorizontalAlignment="Center"
+				Margin="0,5"/>
+	</StackPanel>
+</UserControl>

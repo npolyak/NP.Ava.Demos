@@ -257,3 +257,5 @@ _NCrunch*
 /EmbeddingProblemOnLinux/WinHostingApp/obj
 /EmbeddingProblemOnLinux/WinHostingApp/.vs/WinHostingApp/DesignTimeBuild
 /EmbeddingProblemOnLinux/WinHostingApp/.vs/WinHostingApp/v17
+/WASM/AspWithAvaTest/.vs/AspWithAvaTest
+/WASM/AspWithAvaTest/AspWithAvaTest/wwwroot/_framework
