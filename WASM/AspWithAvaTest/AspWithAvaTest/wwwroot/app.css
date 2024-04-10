@@ -53,6 +53,9 @@ div#out#avalonia-splash .center:focus-visible {
     border: none;
 }
 
+div#out:focus-visible {
+    outline: 0px;
+}
 
 #avalonia-splash {
     position: relative;
