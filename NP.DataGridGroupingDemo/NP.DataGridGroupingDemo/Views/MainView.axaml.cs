@@ -26,12 +26,12 @@ public partial class MainView : UserControl
         if (_isGrouped)
         {
             collectionView.GroupDescriptions.Clear();
-            GroupByLastNameButton.Content = UnGroupingButtonName;
+            GroupByLastNameButton.Content = GroupingButtonName;
         }
         else
         {
             collectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("LastName"));
-            GroupByLastNameButton.Content = GroupingButtonName;
+            GroupByLastNameButton.Content = UnGroupingButtonName;
         }
 
         _isGrouped = !_isGrouped;
