@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:NP.DataGridGroupingDemo"
+			 xmlns:np="https://np.com/visuals"
+             x:Class="NP.DataGridGroupingDemo.Views.MainView">
+	<UserControl.Styles>
+		<Style Selector="TextBox.DataGridFilterTextBox">
+			<Setter Property="Background"
+					Value="White"/>
+			<Setter Property="Foreground"
+					Value="Black"/>
+			<Setter Property="CaretBrush"
+					Value="Black"/>
+		</Style>
+		<Style Selector="DataGridRow:pointerover /template/ Rectangle#BackgroundRectangle">
+			<Setter Property="IsVisible"
+					Value="True" />
+			<Setter Property="Opacity"
+					Value="0.3" />
+		</Style>
+		<Style Selector="DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
+			<Setter Property="IsVisible"
+					Value="True" />
+			<Setter Property="Opacity"
+					Value="0.5" />
+		</Style>
+		<Style Selector="DataGridRowGroupHeader">
+			<Setter Property="Height"
+					Value="40"/>
+		</Style>
+	</UserControl.Styles>
+
+	<Grid RowDefinitions="*,Auto"
+		  Margin="15">
+		<DataGrid x:Name="TheDataGrid"
+				  Classes="WithColumnFilters"
+				  CanUserReorderColumns="True"
+				  CanUserResizeColumns="True"
+				  RowBackground="White"
+				  FontSize="18"
+				  np:DataGridFilteringBehavior.DataGridFilterTextBoxClasses="DataGridFilterTextBox"
+				  np:DataGridFilteringBehavior.RowDataType="{x:Type local:Person}"
+				  np:DataGridCollectionViewBehavior.ItemsSource="{Binding $parent[UserControl].ThePeople}">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="FirstName"
+									np:DataGridFilteringBehavior.FilterPropName="FirstName"
+									Binding="{Binding Path=FirstName}"/>
+				<DataGridTextColumn Header="FirstName (Disabled Filtering)"
+									Binding="{Binding Path=FirstName}"/>
+				<DataGridTextColumn Header="LastName"
+									np:DataGridFilteringBehavior.FilterPropName="LastName"
+									Binding="{Binding Path=LastName}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Button x:Name="GroupByLastNameButton"
+				HorizontalAlignment="Right"
+				FontSize="18"
+				Grid.Row="1"
+				Margin="0,15,0,0"/>
+	</Grid>
+</UserControl>
