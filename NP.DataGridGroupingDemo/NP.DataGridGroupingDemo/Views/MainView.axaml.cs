@@ -1,6 +1,5 @@
 using Avalonia.Collections;
 using Avalonia.Controls;
-using System.Text.RegularExpressions;
 
 namespace NP.DataGridGroupingDemo.Views;
 
